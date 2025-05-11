@@ -1,0 +1,41 @@
+{
+  "name": "todo-api-2",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "start:dev": "nodemon src/app.js",
+    "lint": "eslint . --config eslint.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "eslint": "^9.26.0",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "module-alias": "^2.2.3",
+    "nodemon": "^3.1.10",
+    "pg": "^8.15.6",
+    "sequelize": "^6.37.7",
+    "sequelize-cli": "^6.6.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "_moduleAliases": {
+    "@model": "src/databases/models",
+    "@config": "src/config",
+    "@modules": "src/modules",
+    "@enums": "src/enums",
+    "@helpers": "src/helpers",
+    "@filters": "src/filters",
+    "@middlewares": "src/middlewares"
+  }
+}
