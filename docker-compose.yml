@@ -12,6 +12,8 @@ services:
     restart: 'always'
     env_file:
       - .env  # Pastikan file .env ada di root proyek
+    networks:
+      - shared_network
     environment:
       - DB_CONNECTION=$DB_CONNECTION
       - DB_HOST=$DB_HOST  # Gunakan nama service postgres untuk komunikasi antar container
@@ -28,19 +30,3 @@ services:
       - API_NINJA_KEY=$API_NINJA_KEY
       - API_NINJA_URL=$API_NINJA_URL
       - HASHJWT=$HASHJWT
-
-#   postgres:
-#     image: postgres:15
-#     container_name: postgres15
-#     environment:
-#       POSTGRES_DB: $DB_NAME  # Gunakan variabel DB_NAME dari .env
-#       POSTGRES_USER: $DB_USERNAME  # Gunakan variabel DB_USERNAME dari .env
-#       POSTGRES_PASSWORD: $DB_PASSWORD  # Gunakan variabel DB_PASSWORD dari .env
-#     ports:
-#       - "5432:5432"  # Agar database dapat diakses di port 5432
-#     volumes:
-#       - postgres_data:/var/lib/postgresql/data  # Menyimpan data secara persisten
-
-# # Volume untuk menyimpan data PostgreSQL secara persisten
-# volumes:
-#   postgres_data:
