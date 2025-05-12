@@ -1,0 +1,27 @@
+version: '3'
+services:
+  todo-api:
+    build: .
+    container_name: node_app
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "9000:3000"
+    restart: 'always'
+    environment:
+      - DB_CONNECTION=$DB_CONNECTION
+      - DB_HOST=$DB_HOST
+      - DB_PORT=$DB_PORT
+      - DB_NAME=$DB_NAME
+      - DB_USERNAME=$DB_USERNAME
+      - DB_PASSWORD=$DB_PASSWORD
+      - DB_READ_CONNECTION=$DB_READ_CONNECTION
+      - DB_READ_HOST=$DB_READ_HOST
+      - DB_READ_PORT=$DB_READ_PORT
+      - DB_READ_NAME=DB_NAME=$DB_READ_NAME
+      - DB_READ_USERNAME=$DB_READ_USERNAME
+      - DB_READ_PASSWORD=$DB_READ_PASSWORD
+      - API_NINJA_KEY=$API_NINJA_KEY
+      - API_NINJA_URL=$API_NINJA_URL
+      - HASHJWT=$HASHJWT
